@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\Criteria;
  * @package AppBundle\Manager
  * @author  Mardari Dorel <mardari.dorua@gmail.com>
  */
-class FeedManager
+class FeedManager implements FeedManagerInterface
 {
     /**
      * @param []FeedInterface $feeds

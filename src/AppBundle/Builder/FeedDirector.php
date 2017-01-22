@@ -24,7 +24,7 @@ class FeedDirector
      * @param integer $feedItemsLimit
      * @param HandlerStack $stack
      */
-    public function __construct($feedItemsLimit, $stack)
+    public function __construct($feedItemsLimit, HandlerStack $stack)
     {
         $this->feedItemsLimit = $feedItemsLimit;
         $this->stack = $stack;

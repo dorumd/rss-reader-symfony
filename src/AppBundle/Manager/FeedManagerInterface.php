@@ -14,8 +14,9 @@ interface FeedManagerInterface
      * Merge multiple feeds
      *
      * @param array $feeds
+     * @param int $maxResults
      *
      * @return ArrayCollection
      */
-    public function mergeFeeds(array $feeds): ArrayCollection;
+    public static function mergeFeeds(array $feeds, int $maxResults): ArrayCollection;
 }
