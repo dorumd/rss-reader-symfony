@@ -18,3 +18,5 @@ parameters:
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
     feed_items_limit: 20
+    # Feed cache ttl - default set to 60s
+    feed_cache_ttl: 60

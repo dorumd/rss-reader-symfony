@@ -5,6 +5,7 @@ services:
 
     app.guzzle_http.factory:
         class: AppBundle\Factory\GuzzleHttpFactory
+        arguments: ['%feed_cache_ttl%']
 
     app.guzzle_http.cache:
         class: Kevinrob\GuzzleCache\CacheMiddleware
