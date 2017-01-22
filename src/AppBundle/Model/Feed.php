@@ -3,7 +3,6 @@
 namespace AppBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Criteria;
 
 /**
  * Class Feed
@@ -53,12 +52,8 @@ class Feed implements FeedInterface
     /**
      * @inheritdoc
      */
-    public function getItems($title = ''): ArrayCollection
+    public function getItems(): ArrayCollection
     {
-        if (strlen($title) > 0) {
-            return $this->getNamedItems($title);
-        }
-
         return $this->items;
     }
 
@@ -80,9 +75,5 @@ class Feed implements FeedInterface
         $this->items->remove($feedItem);
 
         return $this;
-    }
-
-    public function getNamedItems($title): ArrayCollection
-    {
     }
 }

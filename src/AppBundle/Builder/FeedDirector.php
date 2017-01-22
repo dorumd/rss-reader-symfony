@@ -38,7 +38,7 @@ class FeedDirector
 
         $feedItems = $builder->getFeedXML()->channel->item;
 
-        foreach ($feedItems as $k => $item) {
+        foreach ($feedItems as $item) {
             if ($builder->getFeed()->getItems()->count() >= $this->feedItemsLimit) {
                 break;
             }

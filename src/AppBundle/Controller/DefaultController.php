@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Repository\FeedRepository;
+use AppBundle\Repository\FeedItemRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,7 +14,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $items = FeedRepository::findItemsByTitle($this->getFeed('ny_times'), $request->query->get('title', ''));
+        $items = FeedItemRepository::findByTitle($this->getFeed('ny_times')->getItems(), $request->query->get('title', ''));
 
         return $this->render('default/index.html.twig', [
             'feedItems' => $items,

@@ -1,27 +1,27 @@
 <?php
 
 namespace AppBundle\Repository;
-use AppBundle\Model\FeedInterface;
+
 use AppBundle\Model\FeedItemInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Class FeedRepository
+ * Class FeedItemRepository
  * @package AppBundle\Repository
  * @author  Mardari Dorel <mardari.dorua@gmail.com>
  */
-class FeedRepository
+class FeedItemRepository
 {
-    public static function findItemsByTitle(FeedInterface $feed, $title = ''): ArrayCollection
+    public static function findByTitle(ArrayCollection $items, $title = ''): ArrayCollection
     {
         if (strlen($title) === 0) {
-            return $feed->getItems();
+            return $items;
         }
 
         $results = new ArrayCollection();
 
         /** @var FeedItemInterface $item */
-        foreach ($feed->getItems() as $item) {
+        foreach ($items as $item) {
             if (strpos(strtolower($item->getTitle()), strtolower($title)) !== false) {
                 $results->add($item);
             }

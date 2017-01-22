@@ -27,11 +27,9 @@ interface FeedInterface
     /**
      * Get feed items
      *
-     * @param string $title
-     *
      * @return ArrayCollection
      */
-    public function getItems($title = ''): ArrayCollection;
+    public function getItems(): ArrayCollection;
 
     /**
      * Add feed item

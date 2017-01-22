@@ -8,7 +8,7 @@ use AppBundle\Model\FeedItem;
 use GuzzleHttp\Client;
 
 /**
- * Class NYTimesFeedBuilder
+ * Class DefaultFeedBuilder
  * @package AppBundle\Builder
  * @author  Mardari Dorel <mardari.dorua@gmail.com>
  */
