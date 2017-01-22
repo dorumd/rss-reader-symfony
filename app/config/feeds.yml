@@ -1,0 +1,9 @@
+feeds:
+    items:
+        ny_times:
+            base_uri: http://rss.nytimes.com/
+            suffix: /services/xml/rss/nyt/HomePage.xml
+#            builder: AppBundle\Builder\NYTimesFeedBuilder
+        hacker_news:
+            base_uri: https://news.ycombinator.com/
+            suffix: /rss

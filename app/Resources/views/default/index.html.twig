@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="search-form">
+        <h3>Quick Search:</h3>
+        <form method="GET">
+            <input type="text" name="title" value="{{ app.request.get('title') }}">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <hr />
+    <br />
+
+    <div id="news-feed">
+        {% for item in feedItems %}
+            <div class="feed-item">
+                <h4>{{ item.title }}</h4>
+                <p>{{ item.description|raw }}</p>
+                <p>Published: {{ item.date|date('Y-m-d H:i') }}</p>
+                <hr />
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
