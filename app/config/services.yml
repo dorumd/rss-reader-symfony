@@ -1,4 +1,17 @@
 services:
     app.director.feed:
         class: AppBundle\Builder\FeedDirector
-        arguments: ['%feed_items_limit%']
+        arguments: ['%feed_items_limit%', '@app.guzzle_http.handler_stack']
+
+    app.guzzle_http.factory:
+        class: AppBundle\Factory\GuzzleHttpFactory
+
+    app.guzzle_http.cache:
+        class: Kevinrob\GuzzleCache\CacheMiddleware
+        factory: 'app.guzzle_http.factory:createCacheMiddleware'
+
+    app.guzzle_http.handler_stack:
+        class:   GuzzleHttp\HandlerStack
+        factory: ['GuzzleHttp\HandlerStack', create]
+        calls:
+            - [push, ['@app.guzzle_http.cache', 'cache']]

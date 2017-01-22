@@ -6,6 +6,7 @@ use AppBundle\Model\Feed;
 use AppBundle\Model\FeedInterface;
 use AppBundle\Model\FeedItem;
 use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
 
 /**
  * Class DefaultFeedBuilder
@@ -67,11 +68,12 @@ class DefaultFeedBuilder implements FeedBuilderInterface
     /**
      * @inheritdoc
      */
-    public function fetchFeed()
+    public function fetchFeed(HandlerStack $stack)
     {
         $client = new Client([
             'base_uri' => $this->uri,
             'headers' => ['Accept' => 'application/xml'],
+            'handler' => $stack,
         ]);
 
         $response = $client->get($this->suffix);

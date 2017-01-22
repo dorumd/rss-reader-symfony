@@ -3,6 +3,7 @@
 namespace AppBundle\Builder;
 
 use AppBundle\Model\FeedInterface;
+use GuzzleHttp\HandlerStack;
 
 /**
  * Class FeedDirector
@@ -14,14 +15,19 @@ class FeedDirector
     /** @var int */
     private $feedItemsLimit;
 
+    /** @var HandlerStack */
+    private $stack;
+
     /**
      * FeedDirector constructor.
      *
-     * @param $feedItemsLimit
+     * @param integer $feedItemsLimit
+     * @param HandlerStack $stack
      */
-    public function __construct($feedItemsLimit)
+    public function __construct($feedItemsLimit, $stack)
     {
         $this->feedItemsLimit = $feedItemsLimit;
+        $this->stack = $stack;
     }
 
     /**
@@ -33,7 +39,7 @@ class FeedDirector
      */
     public function build(FeedBuilderInterface $builder): FeedInterface
     {
-        $builder->fetchFeed();
+        $builder->fetchFeed($this->stack);
         $builder->createFeed();
 
         $feedItems = $builder->getFeedXML()->channel->item;

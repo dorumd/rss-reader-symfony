@@ -3,6 +3,7 @@
 namespace AppBundle\Builder;
 
 use AppBundle\Model\FeedInterface;
+use GuzzleHttp\HandlerStack;
 
 /**
  * Interface FeedBuilderInterface
@@ -29,9 +30,11 @@ interface FeedBuilderInterface
     /**
      * Fetch feed
      *
+     * @param HandlerStack $stack
+     *
      * @return mixed
      */
-    public function fetchFeed();
+    public function fetchFeed(HandlerStack $stack);
 
     /**
      * Get feed
