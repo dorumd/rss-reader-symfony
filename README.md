@@ -14,7 +14,7 @@ feeds:
 #            builder: AppBundle\Builder\NYTimesFeedBuilder
 ```
 
-Builder class parameter is optional, for cases when you have a special feed and you wan't to do some processing.
+Builder class parameter is optional, for cases when you have a special feed and you want to do some processing.
 
 Feed data is cached for 60s. Modify `feed_cache_ttl` parameter according to your needs.
 
