@@ -1,5 +1,7 @@
 rss-reader
 ==========
+[![Build status](https://travis-ci.org/dorumd/rss-reader-symfony.svg?branch=master)](https://travis-ci.org/dorumd/rss-reader-symfony)
+
 
 Demo available at: [link](http://mardari.net "link").
 
