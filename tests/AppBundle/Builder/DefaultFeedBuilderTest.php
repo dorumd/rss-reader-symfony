@@ -26,10 +26,15 @@ class DefaultFeedBuilderTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->defaultFeedBuilder = $this->getMock(DefaultFeedBuilder::class, ['getFeedXML'], [
-            self::FEED_URL,
-            self::FEED_SUFFIX
-        ]);
+        $this->defaultFeedBuilder = $this
+            ->getMockBuilder(DefaultFeedBuilder::class)
+            ->setMethods(['getFeedXML'])
+            ->setConstructorArgs([
+                self::FEED_URL,
+                self::FEED_SUFFIX
+            ])
+            ->getMock()
+        ;
     }
 
     protected function tearDown()
