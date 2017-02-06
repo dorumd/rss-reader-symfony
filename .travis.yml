@@ -2,7 +2,8 @@ language: php
 php:
   - '7.0'
   - '7.1'
-script: phpunit tests/
+script: ./vendor/bin/phpunit
 before_script:
   - cp app/config/parameters.yml.dist app/config/parameters.yml
+  - cp phpunit.xml.dist phpunit.xml
   - composer install
