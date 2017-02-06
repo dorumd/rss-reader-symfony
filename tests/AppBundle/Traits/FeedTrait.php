@@ -8,6 +8,11 @@ use AppBundle\Model\FeedItemInterface;
 trait FeedTrait
 {
     /**
+     * Create feed xml
+     *
+     * @param string $title Feed Title
+     * @param string $url   Feed URL
+     *
      * @return \SimpleXMLElement
      */
     private function getValidFeedXML($title, $url): \SimpleXMLElement
@@ -20,6 +25,16 @@ trait FeedTrait
         return $feedXML;
     }
 
+    /**
+     * Create feed item xml
+     *
+     * @param string $title       Feed Item Title
+     * @param string $link        Feed Item Link
+     * @param string $pubDate     Feed Item Publish Date
+     * @param string $description Feed Item Description
+     *
+     * @return \SimpleXMLElement
+     */
     private function getValidFeedItemXML($title, $link, $pubDate, $description): \SimpleXMLElement
     {
         $feedItemXML = new \SimpleXMLElement('<item></item>');
@@ -31,6 +46,13 @@ trait FeedTrait
         return $feedItemXML;
     }
 
+    /**
+     * Create a dummy feed item
+     *
+     * @param string $title Feed Item Title
+     *
+     * @return FeedItemInterface
+     */
     private function createDummyFeedItem($title = 'Title'): FeedItemInterface
     {
         return new FeedItem($title, new \DateTime(), 'Description', '');
