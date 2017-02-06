@@ -2,6 +2,8 @@
 
 namespace Tests\AppBundle\Traits;
 
+use AppBundle\Model\FeedItem;
+
 trait FeedTrait
 {
     /**
@@ -26,5 +28,10 @@ trait FeedTrait
         $feedItemXML->addChild('description', $description);
 
         return $feedItemXML;
+    }
+
+    private function createDummyFeedItem()
+    {
+        return new FeedItem('Title', new \DateTime(), 'Description', '');
     }
 }
