@@ -3,6 +3,7 @@
 namespace Tests\AppBundle\Traits;
 
 use AppBundle\Model\FeedItem;
+use AppBundle\Model\FeedItemInterface;
 
 trait FeedTrait
 {
@@ -30,8 +31,8 @@ trait FeedTrait
         return $feedItemXML;
     }
 
-    private function createDummyFeedItem()
+    private function createDummyFeedItem($title = 'Title'): FeedItemInterface
     {
-        return new FeedItem('Title', new \DateTime(), 'Description', '');
+        return new FeedItem($title, new \DateTime(), 'Description', '');
     }
 }
