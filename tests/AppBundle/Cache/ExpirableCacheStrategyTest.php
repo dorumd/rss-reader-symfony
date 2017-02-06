@@ -46,6 +46,9 @@ class ExpirableCacheStrategyTest extends \PHPUnit_Framework_TestCase
         $cacheObject = $this->callMethod($this->expirableCacheStrategy, 'getCacheObject', [$requestMock, $responseMock]);
 
         $this->assertInstanceOf(CacheEntry::class, $cacheObject);
-        $this->assertEquals(new \DateTime('+' . self::CACHE_TTL . ' seconds'), $cacheObject->getStaleAt());
+        $this->assertEquals(
+            (new \DateTime('+' . self::CACHE_TTL . ' seconds'))->format('Y-m-d h:i'),
+            $cacheObject->getStaleAt()->format('Y-m-d h:i')
+        );
     }
 }
