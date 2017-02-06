@@ -4,11 +4,6 @@ namespace Tests\AppBundle\Traits;
 
 trait FeedTrait
 {
-    protected function setupDefaultFeed()
-    {
-
-    }
-
     /**
      * @return \SimpleXMLElement
      */
