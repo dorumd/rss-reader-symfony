@@ -2,7 +2,7 @@ rss-reader
 ==========
 [![Build status](https://travis-ci.org/dorumd/rss-reader-symfony.svg?branch=master)](https://travis-ci.org/dorumd/rss-reader-symfony)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dorumd/rss-reader-symfony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dorumd/rss-reader-symfony/?branch=master)
-
+[![Coverage Status](https://coveralls.io/repos/github/dorumd/rss-reader-symfony/badge.svg?branch=master)](https://coveralls.io/github/dorumd/rss-reader-symfony?branch=master)
 
 Demo available at: [link](http://mardari.net "link").
 
