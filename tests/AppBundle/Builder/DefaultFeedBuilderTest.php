@@ -65,6 +65,24 @@ class DefaultFeedBuilderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(self::FEED_ITEM_DESCRIPTION, $feedItem->getDescription());
     }
 
+    /**
+     * @throws \Exception
+     */
+    public function testGetFeedXML()
+    {
+        /** @var DefaultFeedBuilder $feedBuilder */
+        $feedBuilder = $this
+            ->getMockBuilder(DefaultFeedBuilder::class)
+            ->setConstructorArgs([
+                self::FEED_URL,
+                self::FEED_SUFFIX
+            ])
+            ->getMock()
+        ;
+
+        $feedBuilder->getFeedXML();
+    }
+
     protected function setupValidFeed()
     {
         $this
