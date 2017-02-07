@@ -6,9 +6,9 @@ script: ./vendor/bin/phpunit --coverage-clover ./tests/logs/clover.xml
 before_script:
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - cp phpunit.xml.dist phpunit.xml
-  - composer require satooshi/php-coveralls:dev-master
-  - composer install --dev
   - composer install
+  - composer require satooshi/php-coveralls:dev-master
+
 after_script:
 - php vendor/bin/coveralls -v
 
